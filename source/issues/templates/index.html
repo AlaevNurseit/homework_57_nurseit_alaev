@@ -15,7 +15,7 @@
             </div>
             <div class="card-body text-secondary">
                 <p>Статус: {{ issue.status }}</p>
-                <p>Тип: {{ issue.type }}</p>
+                <p>Тип: {% for type in issue.types.all %}{{ type }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
                 <div>
                     <a href="{% url 'issue_detail' issue.pk %}" class="btn btn-outline-secondary btn-sm">
                         <i class="fa-solid fa-eye"></i>

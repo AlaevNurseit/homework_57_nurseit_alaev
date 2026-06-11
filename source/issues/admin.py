@@ -3,7 +3,7 @@ from .models import Issue, Status,Type
 
 
 class IssueAdmin(admin.ModelAdmin):
-    list_display = ['summary', 'description', 'status', 'type']
+    list_display = ['summary', 'description', 'status',]
     list_filter = ['status']
     search_fields = ['description']
 

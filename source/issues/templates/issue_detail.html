@@ -8,7 +8,7 @@
         <div class="card-body">
             <p>Описание: {{ issue.description }}</p>
             <p>Статус: {{ issue.status }}</p>
-            <p>Тип: {{ issue.type }}</p>
+            <p>Тип: {% for type in issue.types.all %}{{ type }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
             <p>Создано: {{ issue.created_at }}</p>
             <p>Обновлено: {{ issue.updated_at }}</p>
         </div>
